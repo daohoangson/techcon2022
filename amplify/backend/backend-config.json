@@ -56,5 +56,11 @@
       "apiType": "REST",
       "iamAccessUnavailable": true
     }
+  },
+  "storage": {
+    "thumbups": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }

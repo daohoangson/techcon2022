@@ -1,0 +1,10 @@
+{
+  "resourceName": "thumbups",
+  "tableName": "Techcon2022ThumbUps",
+  "partitionKey": {
+    "fieldName": "PK",
+    "fieldType": "string"
+  },
+  "gsi": [],
+  "triggerFunctions": []
+}

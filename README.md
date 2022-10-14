@@ -9,6 +9,7 @@ Full-stack Dart demo project.
 - An AWS Amplify project has been initialized with `amplify init`.
 - Authentication has been setup with `amplify add auth`.
 - Backend API has been setup with `amplify add api`, using AWS Fargate container-based deployment.
+- Storage has been setup with `amplify add storage`, using a DynamoDB table to store thumb ups.
 
 # Important files
 
