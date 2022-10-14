@@ -6,6 +6,7 @@ Full-stack Dart demo project.
 
 - This repository was first initialized as a Flutter project with `flutter create` CLI.
 - The Flutter app icon has been replaced with the Techcon logo.
+- An AWS Amplify project has been initialized with `amplify init`.
 
 # Important files
 
