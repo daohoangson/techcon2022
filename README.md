@@ -12,5 +12,7 @@ Full-stack Dart demo project.
 
 # Important files
 
-- [lib/src/app_root.dart](lib/src/app_root.dart) Flutter root widget
-- [lib/src/app_screen.dart](lib/src/app_screen.dart) Flutter Home screen
+- [api_server.dart](amplify/backend/api/techcon2022api/src/api_server.dart) API server entrypoint, supported endpoints:
+  - Hello, world!
+- [app_root.dart](lib/src/app_root.dart) Flutter root widget
+- [app_screen.dart](lib/src/app_screen.dart) Flutter Home screen
