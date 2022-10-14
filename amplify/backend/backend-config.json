@@ -42,9 +42,21 @@
             "VpcLinkId",
             "CloudMapNamespaceId"
           ]
+        },
+        {
+          "category": "storage",
+          "resourceName": "thumbups",
+          "attributes": [
+            "Name"
+          ]
         }
       ],
       "deploymentMechanism": "FULLY_MANAGED",
+      "environmentMap": {
+        "STORAGE_THUMB_UPS_NAME": {
+          "Ref": "storagethumbupsName"
+        }
+      },
       "imageSource": {
         "type": "CUSTOM"
       },
