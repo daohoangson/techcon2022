@@ -8,6 +8,7 @@ Full-stack Dart demo project.
 - The Flutter app icon has been replaced with the Techcon logo.
 - An AWS Amplify project has been initialized with `amplify init`.
 - Authentication has been setup with `amplify add auth`.
+- Backend API has been setup with `amplify add api`, using AWS Fargate container-based deployment.
 
 # Important files
 
