@@ -6,3 +6,8 @@ Full-stack Dart demo project.
 
 - This repository was first initialized as a Flutter project with `flutter create` CLI.
 - The Flutter app icon has been replaced with the Techcon logo.
+
+# Important files
+
+- [lib/src/app_root.dart](lib/src/app_root.dart) Flutter root widget
+- [lib/src/app_screen.dart](lib/src/app_screen.dart) Flutter Home screen
