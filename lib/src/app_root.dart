@@ -11,9 +11,9 @@ class MyApp extends StatelessWidget {
     Widget built = MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: generateMaterialColor(color: const Color(0xFF04348C)),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Techcon 2022'),
     );
 
     return built;

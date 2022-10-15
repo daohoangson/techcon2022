@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'You have thumbed up this many times:',
             ),
             Text(
               '$_counter',
@@ -40,8 +40,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        tooltip: 'Thumb up',
+        child: const Icon(Icons.thumb_up),
       ),
     );
   }
