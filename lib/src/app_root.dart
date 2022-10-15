@@ -1,4 +1,5 @@
 import 'package:amplify_auth_cognito/amplify_auth_cognito.dart';
+import 'package:amplify_authenticator/amplify_authenticator.dart';
 import 'package:amplify_flutter/amplify_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:material_color_generator/material_color_generator.dart';
@@ -36,8 +37,11 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: generateMaterialColor(color: const Color(0xFF04348C)),
       ),
+      builder: Authenticator.builder(),
       home: const MyHomePage(title: 'Techcon 2022'),
     );
+
+    built = Authenticator(child: built);
 
     return built;
   }
