@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-techcon2022-six-01115-unauthRole",
       "StackName": "amplify-techcon2022-six-01115",
       "StackId": "arn:aws:cloudformation:ap-southeast-1:611714419758:stack/amplify-techcon2022-six-01115/60fd43d0-4cac-11ed-89ac-0ace73296c26",
-      "AmplifyAppId": "d1sn7zu80v9gh7"
+      "AmplifyAppId": "d1sn7zu80v9gh7",
+      "NetworkStackS3Url": "https://s3.amazonaws.com/amplify-techcon2022-six-01115-deployment/amplify-cfn-templates/networkingStackTemplate.json"
     },
     "categories": {
       "auth": {
