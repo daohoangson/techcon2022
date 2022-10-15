@@ -36,6 +36,9 @@
     "NetworkStackCloudMapNamespaceId": {
       "Type": "String"
     },
+    "storagethumbupsName": {
+      "Type": "String"
+    },
     "rootStackName": {
       "Type": "String"
     },
@@ -122,7 +125,14 @@
           {
             "Command": [],
             "EntryPoint": [],
-            "Environment": [],
+            "Environment": [
+              {
+                "Name": "STORAGE_THUMB_UPS_NAME",
+                "Value": {
+                  "Ref": "storagethumbupsName"
+                }
+              }
+            ],
             "Essential": true,
             "Image": {
               "Fn::Join": [
@@ -345,7 +355,7 @@
         "Cluster": {
           "Ref": "NetworkStackClusterName"
         },
-        "DesiredCount": 0,
+        "DesiredCount": 1,
         "LaunchType": "FARGATE",
         "NetworkConfiguration": {
           "AwsvpcConfiguration": {
@@ -2156,6 +2166,40 @@
           ]
         }
       }
+    },
+    "CustomExecutionPolicyForContainer": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "dynamodb:*"
+              ],
+              "Resource": [
+                {
+                  "Fn::Sub": [
+                    "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tableName}",
+                    {
+                      "tableName": {
+                        "Ref": "storagethumbupsName"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "Effect": "Allow"
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "CustomExecutionPolicyForContainer",
+        "Roles": [
+          {
+            "Ref": "TaskDefinitionTaskRoleFD40A61D"
+          }
+        ]
+      }
     }
   },
   "Outputs": {
@@ -2194,6 +2238,5 @@
         ]
       }
     }
-  },
-  "Description": "{\"createdOn\":\"Mac\",\"createdBy\":\"Amplify\",\"createdWith\":\"9.1.0\",\"stackType\":\"api-ElasticContainer\",\"metadata\":{}}"
+  }
 }
