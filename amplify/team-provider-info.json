@@ -1,0 +1,20 @@
+{
+  "three": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-techcon2022-three-235200-authRole",
+      "UnauthRoleArn": "arn:aws:iam::611714419758:role/amplify-techcon2022-three-235200-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::611714419758:role/amplify-techcon2022-three-235200-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-techcon2022-three-235200-deployment",
+      "UnauthRoleName": "amplify-techcon2022-three-235200-unauthRole",
+      "StackName": "amplify-techcon2022-three-235200",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:611714419758:stack/amplify-techcon2022-three-235200/b0d88fc0-4ca9-11ed-8982-0a2bbb4837a0",
+      "AmplifyAppId": "d1sn7zu80v9gh7"
+    },
+    "categories": {
+      "auth": {
+        "techcon2022": {}
+      }
+    }
+  }
+}
