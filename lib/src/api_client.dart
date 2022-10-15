@@ -5,10 +5,21 @@ import 'package:flutter/foundation.dart';
 
 class ApiClient {
   Future<int> getValue() async {
-    return 0;
+    const opts = RestOptions(path: '/');
+    final resp = await Amplify.API.get(restOptions: opts).response;
+    final value = int.tryParse(resp.body) ?? 0;
+    return value;
   }
 
   Future<int> increaseValue() async {
-    return 0;
+    final user = await Amplify.Auth.getCurrentUser();
+    final body = jsonEncode(<String, String>{'user_id': user.userId});
+    final opts = RestOptions(
+      path: '/',
+      body: Uint8List.fromList(body.codeUnits),
+    );
+    final resp = await Amplify.API.post(restOptions: opts).response;
+    final value = int.tryParse(resp.body) ?? 0;
+    return value;
   }
 }

@@ -16,9 +16,14 @@ void main() async {
     final reqBody = await RequestBody.fromHttpRequest(request);
 
     try {
-      // TODO: some fancy business logic goes here
-      await Future.delayed(const Duration(milliseconds: 1));
-      resp.write('Hello userId=${reqBody.userId}');
+      if (request.method == 'POST') {
+        // increase counter on POST request
+        await db.thumbsUp(reqBody.userId ?? '');
+      }
+
+      // always return the latest value
+      final value = await db.getThumbUps();
+      resp.write('$value');
     } catch (error) {
       resp.statusCode = 500;
       resp.write('$error');
