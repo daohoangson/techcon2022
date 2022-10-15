@@ -13,7 +13,7 @@ Full-stack Dart demo project.
 
 # Important files
 
-- [api_client.dart](lib/src/api_client.dart) API client mock implementation
+- [api_client.dart](lib/src/api_client.dart) API client implementation using `Amplify.API`
 - [api_server.dart](amplify/backend/api/techcon2022api/src/api_server.dart) API server entrypoint, supported endpoints:
   - `GET` returns total thumbs up
   - `POST` increases counter by 1
