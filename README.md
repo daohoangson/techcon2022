@@ -12,6 +12,7 @@ Full-stack Dart demo project.
 
 # Important files
 
+- [api_client.dart](lib/src/api_client.dart) API client mock implementation
 - [api_server.dart](amplify/backend/api/techcon2022api/src/api_server.dart) API server entrypoint, supported endpoints:
   - Hello, world!
 - [app_root.dart](lib/src/app_root.dart) Flutter root widget
