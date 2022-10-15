@@ -8,8 +8,12 @@ Full-stack Dart demo project.
 - The Flutter app icon has been replaced with the Techcon logo.
 - An AWS Amplify project has been initialized with `amplify init`.
 - Authentication has been setup with `amplify add auth`.
+- Backend API has been setup with `amplify add api`, using AWS Fargate container-based deployment.
 
 # Important files
 
-- [lib/src/app_root.dart](lib/src/app_root.dart) Flutter root widget
-- [lib/src/app_screen.dart](lib/src/app_screen.dart) Flutter Home screen
+- [api_client.dart](lib/src/api_client.dart) API client mock implementation
+- [api_server.dart](amplify/backend/api/techcon2022api/src/api_server.dart) API server entrypoint, supported endpoints:
+  - Hello, world!
+- [app_root.dart](lib/src/app_root.dart) Flutter root widget
+- [app_screen.dart](lib/src/app_screen.dart) Flutter Home screen
