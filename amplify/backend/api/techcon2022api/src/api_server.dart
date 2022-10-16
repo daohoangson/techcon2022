@@ -5,13 +5,12 @@ import 'aws_dynamodb.dart';
 import 'http_request.dart';
 
 void main() async {
-  final db = new DynamodbUtil(credentials: await CredentialsUtil.resolve());
-
   final port = int.tryParse(Platform.environment['PORT'] ?? '') ?? 8080;
   final server = await HttpServer.bind(InternetAddress.anyIPv6, port);
   print('API Server is listening at :$port');
 
   await server.forEach((HttpRequest request) async {
+    final db = new DynamodbUtil(credentials: await CredentialsUtil.resolve());
     final resp = request.response;
     final reqBody = await RequestBody.fromHttpRequest(request);
 
