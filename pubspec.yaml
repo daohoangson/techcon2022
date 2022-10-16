@@ -28,3 +28,6 @@ flutter:
 flutter_icons:
   image_path: assets/icon/icon.png
   ios: true
+  web:
+    generate: true
+    theme_color: '#04348C'
