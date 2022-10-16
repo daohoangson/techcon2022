@@ -43,11 +43,12 @@ class CredentialsUtil {
     final accessKeyId = respJson['AccessKeyId'] ?? '';
     final secretAccessKey = respJson['SecretAccessKey'] ?? '';
     final token = respJson['Token'] ?? '';
-    final expiration = respJson['Expiration'] ?? '';
+    final expirationJson = respJson['Expiration'] ?? '';
+    final expiration = DateTime.tryParse('$expirationJson');
     if (accessKeyId is! String ||
         secretAccessKey is! String ||
         token is! String ||
-        expiration is! String) {
+        expiration == null) {
       print(
         'CredentialsUtil.resolve: '
         'Unexpected response body $respBody',
@@ -55,9 +56,15 @@ class CredentialsUtil {
       return null;
     }
 
+    print(
+      'CredentialsUtil.resolve: '
+      'expirationJson=$expirationJson '
+      'expiration=${expiration.millisecondsSinceEpoch}',
+    );
+
     return AwsClientCredentials(
       accessKey: accessKeyId,
-      expiration: DateTime.tryParse(expiration),
+      expiration: expiration,
       secretKey: secretAccessKey,
       sessionToken: token,
     );
