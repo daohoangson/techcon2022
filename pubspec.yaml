@@ -11,10 +11,10 @@ dependencies:
   flutter:
     sdk: flutter
   material_color_generator: ^1.1.0
-  amplify_auth_cognito: ^0.6.9
-  amplify_authenticator: ^0.2.3
-  amplify_flutter: ^0.6.9
-  amplify_api: ^0.6.9
+  amplify_auth_cognito: ^1.0.0-next.0+5
+  amplify_authenticator: ^1.0.0-next.0+3
+  amplify_flutter: ^1.0.0-next.0+3
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -28,3 +28,6 @@ flutter:
 flutter_icons:
   image_path: assets/icon/icon.png
   ios: true
+  web:
+    generate: true
+    theme_color: '#04348C'
