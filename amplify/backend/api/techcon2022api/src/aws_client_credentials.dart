@@ -3,11 +3,21 @@ import 'dart:io';
 
 import 'package:document_client/document_client.dart';
 
+AwsClientCredentials? _credentials;
+
 class CredentialsUtil {
   static const keyFullUri = 'AWS_CONTAINER_CREDENTIALS_FULL_URI';
   static const keyRelativeUri = 'AWS_CONTAINER_CREDENTIALS_RELATIVE_URI';
 
   static Future<AwsClientCredentials?> resolve() async {
+    if (_credentials?.expiration?.isAfter(DateTime.now()) == true) {
+      print(
+        'CredentialsUtil.resolve: reuse '
+        'accessKey=${_credentials?.accessKey}',
+      );
+      return _credentials;
+    }
+
     var fullUri = Platform.environment[keyFullUri] ?? '';
     if (fullUri.isEmpty) {
       final relativeUri = Platform.environment[keyRelativeUri] ?? '';
@@ -58,11 +68,12 @@ class CredentialsUtil {
 
     print(
       'CredentialsUtil.resolve: '
+      'accessKeyId=$accessKeyId '
       'expirationJson=$expirationJson '
       'expiration=${expiration.millisecondsSinceEpoch}',
     );
 
-    return AwsClientCredentials(
+    return _credentials = AwsClientCredentials(
       accessKey: accessKeyId,
       expiration: expiration,
       secretKey: secretAccessKey,
